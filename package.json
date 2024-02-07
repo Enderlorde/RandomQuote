@@ -1,0 +1,23 @@
+{
+  "name": "random_quote_enderlorde_fcc",
+  "version": "1.0.0",
+  "description": "RandomQuote is a part of my projects for FreeCodeCamp. Provides random quote.",
+  "main": "script.js",
+  "repository": "https://github.com/Enderlorde/RandomQuote.git",
+  "author": "Enderlorde <ender.workpost@ya.ru>",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "dev": "vite"
+  },
+  "dependencies": {
+    "@vitejs/plugin-react": "^4.2.1",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "devDependencies": {
+    "precss": "^4.0.0",
+    "sass": "^1.70.0",
+    "vite": "^5.0.12"
+  }
+}

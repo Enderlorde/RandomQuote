@@ -1,3 +1,6 @@
+import React from 'react';
+import { createRoot } from 'react-dom/client';
+
 //Background colors
 const palette = [
   "#8aa399",
@@ -20,9 +23,16 @@ class QuoteBox extends React.Component{
       url:"local"
     }
   }
+
   quoteGet(){
     //get quote
-    $.ajax({
+    fetch('http://localhost:5173/api/qotd').then(response => response.json()).then(json => this.setState({
+      text:json.quote.body,
+      author:json.quote.author,
+      url:json.quote.url
+  }) );
+  }
+ /*    document.ajax({
         type:'GET',
         url:'https://favqs.com/api/qotd' 
       }).done(response=>{
@@ -32,10 +42,12 @@ class QuoteBox extends React.Component{
           url:response.quote.url
       }) 
     })
-  }
+  } */
+
   componentDidMount(){
     this.quoteGet()
   }
+
   handleClick() {
   this.quoteGet()
   //change background color
@@ -50,24 +62,22 @@ class QuoteBox extends React.Component{
       color:randomBackground
     },
   1000)
-    
   }
-
   
   render(){
     return (
       <div id="quote-box">
           <a id = 'tweet-quote' href={'https://twitter.com/intent/tweet?hashtags=quotes&related=freecodecamp&text=' +
-        encodeURIComponent('"' + this.state.text + '" ' + this.state.author)}><i class="fab fa-twitter"></i></a>
+        encodeURIComponent('"' + this.state.text + '" ' + this.state.author)}><i className="fab fa-twitter"></i></a>
           <div id="quote-content" cite={this.state.url}>
             <p id="text">{this.state.text}</p>
             <p id='author'>--{this.state.author}--</p>
           </div>
-        <i id="new-quote" class="fas fa-random" onLoad={this.handleClick.bind(this)} onClick={this.handleClick.bind(this)}></i>
+        <i id="new-quote" className="fas fa-random" onLoad={this.handleClick.bind(this)} onClick={this.handleClick.bind(this)}></i>
         </div>
     )
   }
 }
 
-const quoteContainer = $("content").get(0);
-ReactDOM.render(<QuoteBox />,quoteContainer)
+const root = createRoot(document.getElementById("root"));
+root.render(<QuoteBox />)
