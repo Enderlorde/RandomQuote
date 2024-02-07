@@ -1,83 +1,37 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { createRoot } from 'react-dom/client';
+import Quote from './quote';
+import Footer from './footer';
+import classes from './app.module.css';
 
-//Background colors
-const palette = [
-  "#8aa399",
-  "#2C2A4A",
-  "#907AD6",
-  "#85c1cc",
-  "#960200",
-  "#AABD8C",
-  "#DC851F",
-  "#CC2936"
-];
+const App = () => {
+  const [background, setBackground] = useState("#333");
 
-//QuoteBox component
-class QuoteBox extends React.Component{
-  constructor(props){
-    super(props)
-    this.state={
-      text:"Nothing to say",
-      author:"John Doe",
-      url:"local"
-    }
+  const changeBackground = () => {
+    const palette = [
+      "#8aa399",
+      "#2C2A4A",
+      "#907AD6",
+      "#85c1cc",
+      "#960200",
+      "#AABD8C",
+      "#DC851F",
+      "#CC2936"
+    ];
+
+    const randomBackground = palette[Math.floor(Math.random() * palette.length)];
+
+    setBackground(randomBackground);
   }
 
-  quoteGet(){
-    //get quote
-    fetch('http://localhost:5173/api/qotd').then(response => response.json()).then(json => this.setState({
-      text:json.quote.body,
-      author:json.quote.author,
-      url:json.quote.url
-  }) );
-  }
- /*    document.ajax({
-        type:'GET',
-        url:'https://favqs.com/api/qotd' 
-      }).done(response=>{
-        this.setState({
-          text:response.quote.body,
-          author:response.quote.author,
-          url:response.quote.url
-      }) 
-    })
-  } */
-
-  componentDidMount(){
-    this.quoteGet()
-  }
-
-  handleClick() {
-  this.quoteGet()
-  //change background color
-  let randomBackground = palette[Math.floor(Math.random() * palette.length)]
-  $('body').animate(
-    {
-      backgroundColor: randomBackground
-    },
-    1000);
-  $('footer a').animate(
-    {
-      color:randomBackground
-    },
-  1000)
-  }
-  
-  render(){
-    return (
-      <div id="quote-box">
-          <a id = 'tweet-quote' href={'https://twitter.com/intent/tweet?hashtags=quotes&related=freecodecamp&text=' +
-        encodeURIComponent('"' + this.state.text + '" ' + this.state.author)}><i className="fab fa-twitter"></i></a>
-          <div id="quote-content" cite={this.state.url}>
-            <p id="text">{this.state.text}</p>
-            <p id='author'>--{this.state.author}--</p>
-          </div>
-        <i id="new-quote" className="fas fa-random" onLoad={this.handleClick.bind(this)} onClick={this.handleClick.bind(this)}></i>
-        </div>
-    )
-  }
+  return (
+    <div className={classes.app} style={{backgroundColor: background}}>
+      <Quote switchColor={() => changeBackground()}/>
+      
+      <Footer linkColor={background}/>
+    </div>
+  );
 }
 
 const root = createRoot(document.getElementById("root"));
-root.render(<QuoteBox />)
+root.render(<App />)

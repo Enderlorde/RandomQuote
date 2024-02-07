@@ -1,0 +1,45 @@
+@import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Berkshire+Swash&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Slab:ital,wght@1,300&display=swap');
+
+.box {
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    align-items: center;
+    gap: 50px;
+
+    max-width: 80%;
+
+    color:white;
+    font-size: 4vh;
+    font-family:'Berkshire Swash',cursive;
+    text-align: center;
+    z-index: 1;
+    text-shadow: #000 2px 2px;
+}
+
+.box::before {
+    content: '';
+    display: block;
+    
+    position: absolute;
+    top: 5%;
+    left: 10%;
+
+    background-color: #000;
+    width: 80%;
+    height: 90%;
+    z-index: -1;
+
+    transition: all 1s ease-in-out;
+}
+
+.author {
+    font-family:'Josefin Slab',cursive;
+    font-size: 3vh;
+}
+
+.randomIcon {
+    cursor: pointer;
+}

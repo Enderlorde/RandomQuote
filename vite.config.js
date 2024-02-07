@@ -1,13 +1,6 @@
-import Precss from 'precss';
-
 export default {
     root: "./src",
     mode: "development",
-    css:{
-        postcss: {
-            plugins: [Precss]
-        }
-    },
     server: {
         proxy:{
             '/api':{

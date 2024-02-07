@@ -4,23 +4,24 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
+  <style>
+    *{
+      padding: 0;
+      margin: 0;
+    }
 
-  <link rel="stylesheet" href="style.scss">
+    #root {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      width: 100%;
+      height: 100vh;
+    }
+  </style>
 </head>
 <body>
-  <content id="root">
-
-    <div class="lds-ellipsis"><div></div><div></div><div></div><div></div></div>
-
-  </content>
-
-  <footer>
-    <p>Quotes are taken from <a href="https://favqs.com/">there</a></p>
-    <p>Icons from <a href="https://fontawesome.com/">there</a></p>
-    <p>Fonts from <a href="https://fonts.google.com/">there</a></p>
-    <p>Inspired by <a href="https://codepen.io/chepe/pen/VLZoMK">this</a></p>
-    <p> Assembled by <a href="https://codepen.io/enderlorde/pens/">that guy</a> in 2021</p>
-  </footer>
+  <div id="root"></div>
   <script type="module" src="./script.jsx" ></script>
 </body>
 </html>

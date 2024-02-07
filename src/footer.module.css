@@ -1,0 +1,26 @@
+.footer {
+    position:fixed;
+    display:flex;
+    justify-content:space-around;
+    align-items:center;
+    color:white;
+    font-family:'Share Tech Mono',monospace;
+    font-size:2vh;
+    bottom:0;
+    left:0;
+    height:5vh;
+    min-height:20px;
+    width:100%;
+    background-color:black;
+
+    a {
+        font-weight:bold;
+        color:#51A3A3;
+        text-decoration:none;
+        transition: all 0.5s ease-in-out;
+    }
+
+    a:hover {
+        font-size:1.5em;
+    }
+}
