@@ -1,6 +1,7 @@
 export default {
     root: "./src",
     mode: "development",
+    envDir: "../",
     build: {
         outDir: "../dist",
         emptyOutDir: true

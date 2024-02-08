@@ -12,8 +12,7 @@ class Quote extends React.Component{
         author:"John Doe",
         url:"local"
       }
-      this.API = import.meta.env.MODE=='development'?'http://localhost:5173/api/qotd':'https://favqs.com/api/qotd';
-      console.log(import.meta.env.MODE);
+      this.API = import.meta.env.VITE_API;
       this.switchColor = props.switchColor;
     }
     
