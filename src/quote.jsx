@@ -18,6 +18,7 @@ class Quote extends React.Component{
     
     quoteGet(){
       //get quote
+      console.log(this.API);
       fetch(this.API).then(response => response.json()).then(json => {
             this.setState({
                 text:json.quote.body,
