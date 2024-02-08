@@ -12,13 +12,14 @@ class Quote extends React.Component{
         author:"John Doe",
         url:"local"
       }
-
+      this.API = import.meta.env.MODE=='development'?'http://localhost:5173/api/qotd':'https://favqs.com/api/qotd';
+      console.log(import.meta.env.MODE);
       this.switchColor = props.switchColor;
     }
-  
+    
     quoteGet(){
       //get quote
-      fetch('http://localhost:5173/api/qotd').then(response => response.json()).then(json => {
+      fetch(this.API).then(response => response.json()).then(json => {
             this.setState({
                 text:json.quote.body,
                 author:json.quote.author,
