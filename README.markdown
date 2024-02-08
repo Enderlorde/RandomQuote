@@ -18,7 +18,7 @@ RandomQuote - небольшой проект, предоставляющий в
 - Babel
 
 # Интерактивное демо :mag:
-[Посмотреть на Codepen](https://codepen.io/enderlorde/full/porZQwN)
+[Посмотреть на Vercel](https://random-quote-ksur.vercel.app/)
 
 # Спасибы :heart:
 [Quotable](https://github.com/lukePeavey/quotable?tab=readme-ov-file#get-random-quotes) за цитаты.
