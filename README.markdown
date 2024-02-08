@@ -21,7 +21,7 @@ RandomQuote - небольшой проект, предоставляющий в
 [Посмотреть на Vercel](https://random-quote-ksur.vercel.app/)
 
 # Спасибы :heart:
-[Quotable](https://github.com/lukePeavey/quotable?tab=readme-ov-file#get-random-quotes) за цитаты.
+[Quotable](https://github.com/lukePeavey/quotable) за цитаты.
 [FontAwesome](https://fontawesome.com/) за иконки.
 [Google Fonts](https://fonts.google.com/) за шрифты **Share Tech Mono**, **Berkshire Swash** и **Josefin Slab**.
 [Quote Test от Jose Manuel Gulias Lugo](https://codepen.io/chepe/pen/VLZoMK)  за вдохновение.
