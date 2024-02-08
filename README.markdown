@@ -21,7 +21,7 @@ RandomQuote - небольшой проект, предоставляющий в
 [Посмотреть на Codepen](https://codepen.io/enderlorde/full/porZQwN)
 
 # Спасибы :heart:
-[FavQs](https://favqs.com/) за цитаты.
+[Quotable](https://github.com/lukePeavey/quotable?tab=readme-ov-file#get-random-quotes) за цитаты.
 [FontAwesome](https://fontawesome.com/) за иконки.
 [Google Fonts](https://fonts.google.com/) за шрифты **Share Tech Mono**, **Berkshire Swash** и **Josefin Slab**.
 [Quote Test от Jose Manuel Gulias Lugo](https://codepen.io/chepe/pen/VLZoMK)  за вдохновение.

@@ -10,20 +10,16 @@ class Quote extends React.Component{
       this.state={
         text:"Nothing to say",
         author:"John Doe",
-        url:"local"
       }
-      this.API = import.meta.env.VITE_API;
       this.switchColor = props.switchColor;
     }
     
     quoteGet(){
       //get quote
-      console.log(this.API);
-      fetch(this.API).then(response => response.json()).then(json => {
+      fetch("https://api.quotable.io/random").then(response => response.json()).then(json => {
             this.setState({
-                text:json.quote.body,
-                author:json.quote.author,
-                url:json.quote.url
+                text:json.content,
+                author:json.author,
             })
             this.switchColor()
         } );
@@ -35,20 +31,19 @@ class Quote extends React.Component{
   
     handleClick() {
       this.quoteGet()
-      
-      //change background color
     }
     
     render(){
       return (
         <div className={classes.box}>
-            <a href={'https://twitter.com/intent/tweet?hashtags=quotes&related=freecodecamp&text=' +
-          encodeURIComponent('"' + this.state.text + '" ' + this.state.author)}><FontAwesomeIcon color='#ffffff' icon={faTwitter} /></a>
-            <div>
-              <p>{this.state.text}</p>
-              <p className={classes.author}>--{this.state.author}--</p>
-            </div>
-            <FontAwesomeIcon className={classes.randomIcon} icon={faRandom} onLoad={this.handleClick.bind(this)} onClick={this.handleClick.bind(this)} />
+            <a href={'https://twitter.com/intent/tweet?hashtags=Quotable&related=Quotable&text=' +
+          encodeURIComponent('"' + this.state.text + '" ' + this.state.author)}><FontAwesomeIcon color='#ffffff' className={classes.icon} icon={faTwitter} /></a>
+
+            <p>{this.state.text}</p>
+
+            <p className={classes.author}>--{this.state.author}--</p>
+
+            <FontAwesomeIcon className={classes.icon} icon={faRandom} onLoad={this.handleClick.bind(this)} onClick={this.handleClick.bind(this)} />
           </div>
       );
     }

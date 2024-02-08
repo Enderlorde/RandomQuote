@@ -40,6 +40,8 @@
     font-size: 3vh;
 }
 
-.randomIcon {
+.icon {
     cursor: pointer;
+
+    filter: drop-shadow( 2px 2px 2px #000);
 }
