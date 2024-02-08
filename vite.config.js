@@ -1,6 +1,10 @@
 export default {
     root: "./src",
     mode: "development",
+    build: {
+        outDir: "../dist",
+        emptyOutDir: true
+    },
     server: {
         proxy:{
             '/api':{
