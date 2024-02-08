@@ -17,6 +17,12 @@ RandomQuote - небольшой проект, предоставляющий в
 - Scss
 - Babel
 
+## Текущий стек технологий:
+- ReactJS (функциональные компоненты)
+- Модульный css
+- Vite
+- Yarn
+
 # Интерактивное демо :mag:
 [Посмотреть на Vercel](https://random-quote-ksur.vercel.app/)
 
