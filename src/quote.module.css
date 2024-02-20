@@ -17,6 +17,8 @@
     text-align: center;
     z-index: 1;
     text-shadow: #000 2px 2px;
+
+    user-select: none;
 }
 
 .box::before {
@@ -44,4 +46,8 @@
     cursor: pointer;
 
     filter: drop-shadow( 2px 2px 2px #000);
+}
+
+.icon_state_busy {
+    cursor: not-allowed;
 }

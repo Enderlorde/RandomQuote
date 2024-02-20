@@ -1,3 +1,5 @@
+import postcss_nested from 'postcss-nested';
+
 export default {
     root: "./src",
     mode: "development",
@@ -5,6 +7,11 @@ export default {
     build: {
         outDir: "../dist",
         emptyOutDir: true
+    },
+    css: {
+        postcss: {
+            plugins: [postcss_nested]
+        }
     },
     server: {
         proxy:{
